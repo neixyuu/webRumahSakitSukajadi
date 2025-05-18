@@ -5,6 +5,7 @@ use Inertia\Inertia;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\DokterController;  // Add this line
+use App\Http\Controllers\FeedbackController;
 
 require __DIR__.'/settings.php';
 require __DIR__.'/auth.php';
@@ -52,6 +53,7 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::get('dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
     Route::post('logout', [AdminController::class, 'logout'])->name('admin.logout');
     Route::get('/admin/dashboardberita', [BeritaController::class, 'index'])->name('admin.dashboardberita');
+    Route::get('/admin/dashboardfeedback', [FeedbackController::class, 'dashboard'])->name('admin.dashboardfeedback');
 });
 
 // Berita Routes
@@ -72,4 +74,18 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/admin/dokter/{dokter}/edit', [DokterController::class, 'edit'])->name('admin.dokter.edit');
     Route::put('/admin/dokter/{dokter}', [DokterController::class, 'update'])->name('admin.dokter.update');
     Route::delete('/admin/dokter/{dokter}', [DokterController::class, 'destroy'])->name('admin.dokter.destroy');
+    // Public feedback routes
+    // Guest feedback route
+    Route::get('/kritiksaran', [FeedbackController::class, 'create'])->name('feedback.create');
+    Route::post('/kritiksaran', [FeedbackController::class, 'store'])->name('feedback.store');
+    Route::get('/admin/feedback', [FeedbackController::class, 'adminIndex'])->name('admin.feedback.index')->middleware('auth');
+    
+    // Admin routes (protected)
+    Route::middleware(['auth', 'admin'])->group(function () {
+        Route::get('/admin/feedback', [App\Http\Controllers\Admin\FeedbackController::class, 'index'])->name('admin.dashboardfeedback');
+        Route::delete('/admin/feedback/{feedback}', [App\Http\Controllers\Admin\FeedbackController::class, 'destroy']);
+    });
+    Route::delete('/feedback/{feedback}', [FeedbackController::class, 'destroy'])->name('admin.feedback.destroy');
 });
+Route::get('/kritiksaran', [FeedbackController::class, 'index'])->name('feedback.index');
+Route::post('/kritiksaran', [FeedbackController::class, 'store'])->name('feedback.store');

@@ -142,116 +142,51 @@
       <!-- 
         - #LISTING
       -->
-
       <section class="section listing" aria-labelledby="listing-label">
         <div class="container">
+          <p class="section-subtitle text-center">Informasi Kontak</p>
+          <h2 class="headline-md section-title text-center">Kontak RSUD Sukajadi</h2>
 
-          <ul class="grid-list">
+          <div class="grid-list" style="margin-top: 40px;">
+            <div class="service-card">
+              <h3 class="card-title">Alamat</h3>
+              <p class="card-text">Jl. Palembang–Betung Km. 14,5, Sukajadi, Talang Kelapa, Banyuasin, Sumatera Selatan.</p>
+            </div>
 
-            <li>
-              <p class="section-subtitle title-lg" id="listing-label" data-reveal="left">List Dokter</p>
+            <div class="service-card">
+              <h3 class="card-title">Telepon/WhatsApp</h3>
+              <p class="card-text">+62 822-7988-7861</p>
+            </div>
 
-              <h2 class="headline-md" data-reveal="left">Cari Dokter Spesialis Anda</h2>
-            </li>
+            <div class="service-card">
+              <h3 class="card-title">Media Sosial</h3>
+              <p class="card-text">Instagram: @rsud_sukajadi</p>
+            </div>
 
-            <li>
-              <div class="listing-card" data-reveal="bottom">
+            <div class="service-card">
+              <h3 class="card-title">Instalasi Gawat Darurat (IGD)</h3>
+              <p class="card-text">24 jam nonstop setiap hari</p>
+            </div>
 
-                <div class="card-icon">
-                  <img src="./assets/images/stetoskop.png" width="71" height="71" loading="lazy" alt="icon">
-                </div>
+            <div class="service-card">
+              <h3 class="card-title">Pendaftaran Pasien</h3>
+              <p class="card-text">Pendaftaran dapat dilakukan melalui WhatsApp untuk mempermudah proses administrasi.</p>
+            </div>
+          </div>
 
-                <div>
-                  <h3 class="headline-sm card-title">Dokter Spesialis Penyakit Dalam</h3>
-
-                  <p class="card-text">dr. Ali Zainal Abidin, Sp.PD</p>
-                </div>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="listing-card" data-reveal="bottom">
-
-                <div class="card-icon">
-                  <img src="./assets/images/stetoskop.png" width="71" height="71" loading="lazy" alt="icon">
-                </div>
-
-                <div>
-                  <h3 class="headline-sm card-title">Dokter Spesialis Penyakit Dalam</h3>
-
-                  <p class="card-text">dr. Antoni, Sp.PD</p>
-                </div>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="listing-card" data-reveal="bottom">
-
-                <div class="card-icon">
-                  <img src="./assets/images/tooth.png" width="71" height="71" loading="lazy" alt="icon">
-                </div>
-
-                <div>
-                  <h3 class="headline-sm card-title">Dokter Spesialis Bedah</h3>
-
-                  <p class="card-text">dr. Hendri Ferozah, Sp.B</p>
-                </div>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="listing-card" data-reveal="bottom">
-
-                <div class="card-icon">
-                  <img src="./assets/images/icon-5.png" width="71" height="71" loading="lazy" alt="icon">
-                </div>
-
-                <div>
-                  <h3 class="headline-sm card-title">Orthopedics</h3>
-
-                  <p class="card-text">Convallis vulputate</p>
-                </div>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="listing-card" data-reveal="bottom">
-
-                <div class="card-icon">
-                  <img src="./assets/images/icon-6.png" width="71" height="71" loading="lazy" alt="icon">
-                </div>
-
-                <div>
-                  <h3 class="headline-sm card-title">Pediatrics</h3>
-
-                  <p class="card-text">Posuere maecenas</p>
-                </div>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="listing-card" data-reveal="bottom">
-
-                <div class="card-icon">
-                  <img src="./assets/images/icon-7.png" width="71" height="71" loading="lazy" alt="icon">
-                </div>
-
-                <div>
-                  <h3 class="headline-sm card-title">Osteology</h3>
-
-                  <p class="card-text">Nisi nullam</p>
-                </div>
-
-              </div>
-            </li>
-
-          </ul>
-
+          <!-- Google Maps Embed -->
+          <div class="map-container" style="margin-top: 50px;" data-reveal="bottom">
+            <h3 class="headline-md text-center" style="margin-bottom: 20px;">Peta Lokasi</h3>
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.4436724543224!2d104.74399731475503!3d-2.9691389978397433!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e3b75c8da2905c3%3A0x6aa5f4f9c5a1c0a5!2sRSUD%20Sukajadi!5e0!3m2!1sid!2sid!4v1699789051824!5m2!1sid!2sid"
+              width="100%" 
+              height="450" 
+              style="border:0; border-radius: 15px;" 
+              allowfullscreen 
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
         </div>
       </section>
     </article>
@@ -321,15 +256,15 @@
           </li>
 
           <li>
-            <a href="#" class="text footer-link">Dokter</a>
+            <a href="dokter" class="text footer-link">Dokter</a>
           </li>
 
           <li>
-            <a href="#" class="text footer-link">Berita</a>
+            <a href="berita" class="text footer-link">Berita</a>
           </li>
 
           <li>
-            <a href="#" class="text footer-link">Kontak Kami</a>
+            <a href="kontak" class="text footer-link">Kontak Kami</a>
           </li>
 
         </ul>
@@ -341,15 +276,11 @@
           </li>
 
           <li>
-            <a href="#" class="text footer-link">Conditions</a>
+            <a href="#" class="text footer-link">Kritik dan Saran</a>
           </li>
 
           <li>
-            <a href="#" class="text footer-link">Terms of Use</a>
-          </li>
-
-          <li>
-            <a href="#" class="text footer-link">Our Services</a>
+            <a href="#" class="text footer-link">Pengaduan</a>
           </li>
 
           <li>

@@ -145,113 +145,42 @@
 
       <section class="section listing" aria-labelledby="listing-label">
         <div class="container">
+          <div class="text-center mb-5">
+            <p class="section-subtitle title-lg" id="listing-label" data-reveal="left">Layanan yang Tersedia</p>
+            <h2 class="headline-md" data-reveal="left">Pelayanan Kesehatan RSUD Sukajadi</h2>
+          </div>
 
-          <ul class="grid-list">
+          <div class="service-list" data-reveal="bottom">
+            <div class="service-item">
+              <h3 class="headline-sm">Instalasi Rawat Jalan (Poliklinik)</h3>
+              <p class="text">Melayani pasien rawat jalan setiap hari kerja.</p>
+            </div>
 
-            <li>
-              <p class="section-subtitle title-lg" id="listing-label" data-reveal="left">List Layanan</p>
+            <div class="service-item">
+              <h3 class="headline-sm">Instalasi Gawat Darurat (IGD)</h3>
+              <p class="text">Melayani pasien gawat darurat selama 24 jam nonstop.</p>
+            </div>
 
-              <h2 class="headline-md" data-reveal="left">Cari Layanan yang ada cari</h2>
-            </li>
+            <div class="service-item">
+              <h3 class="headline-sm">Pendaftaran Pasien</h3>
+              <p class="text">Pendaftaran dapat dilakukan melalui WhatsApp untuk mempermudah proses administrasi.</p>
+            </div>
 
-            <li>
-              <div class="listing-card" data-reveal="bottom">
+            <div class="service-item">
+              <h3 class="headline-sm">Jadwal Poliklinik</h3>
+              <p class="text">Informasi jadwal praktik dokter dan poliklinik tersedia secara online.</p>
+            </div>
 
-                <div class="card-icon">
-                  <img src="./assets/images/stetoskop.png" width="71" height="71" loading="lazy" alt="icon">
-                </div>
+            <div class="service-item">
+              <h3 class="headline-sm">Fasilitas Tempat Tidur</h3>
+              <p class="text">Kapasitas sebanyak 28 tempat tidur untuk perawatan pasien.</p>
+            </div>
 
-                <div>
-                  <h3 class="headline-sm card-title">Dokter Spesialis Penyakit Dalam</h3>
-
-                  <p class="card-text">dr. Ali Zainal Abidin, Sp.PD</p>
-                </div>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="listing-card" data-reveal="bottom">
-
-                <div class="card-icon">
-                  <img src="./assets/images/stetoskop.png" width="71" height="71" loading="lazy" alt="icon">
-                </div>
-
-                <div>
-                  <h3 class="headline-sm card-title">Dokter Spesialis Penyakit Dalam</h3>
-
-                  <p class="card-text">dr. Antoni, Sp.PD</p>
-                </div>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="listing-card" data-reveal="bottom">
-
-                <div class="card-icon">
-                  <img src="./assets/images/tooth.png" width="71" height="71" loading="lazy" alt="icon">
-                </div>
-
-                <div>
-                  <h3 class="headline-sm card-title">Dokter Spesialis Bedah</h3>
-
-                  <p class="card-text">dr. Hendri Ferozah, Sp.B</p>
-                </div>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="listing-card" data-reveal="bottom">
-
-                <div class="card-icon">
-                  <img src="./assets/images/icon-5.png" width="71" height="71" loading="lazy" alt="icon">
-                </div>
-
-                <div>
-                  <h3 class="headline-sm card-title">Orthopedics</h3>
-
-                  <p class="card-text">Convallis vulputate</p>
-                </div>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="listing-card" data-reveal="bottom">
-
-                <div class="card-icon">
-                  <img src="./assets/images/icon-6.png" width="71" height="71" loading="lazy" alt="icon">
-                </div>
-
-                <div>
-                  <h3 class="headline-sm card-title">Pediatrics</h3>
-
-                  <p class="card-text">Posuere maecenas</p>
-                </div>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="listing-card" data-reveal="bottom">
-
-                <div class="card-icon">
-                  <img src="./assets/images/icon-7.png" width="71" height="71" loading="lazy" alt="icon">
-                </div>
-
-                <div>
-                  <h3 class="headline-sm card-title">Osteology</h3>
-
-                  <p class="card-text">Nisi nullam</p>
-                </div>
-
-              </div>
-            </li>
-
-          </ul>
-
+            <div class="service-item">
+              <h3 class="headline-sm">Pengembangan Layanan</h3>
+              <p class="text">RSUD Sukajadi terus meningkatkan kualitas pelayanan dengan menambah fasilitas dan memperkuat tenaga medis.</p>
+            </div>
+          </div>
         </div>
       </section>
     </article>
@@ -321,15 +250,15 @@
           </li>
 
           <li>
-            <a href="#" class="text footer-link">Dokter</a>
+            <a href="dokter" class="text footer-link">Dokter</a>
           </li>
 
           <li>
-            <a href="#" class="text footer-link">Berita</a>
+            <a href="berita" class="text footer-link">Berita</a>
           </li>
 
           <li>
-            <a href="#" class="text footer-link">Kontak Kami</a>
+            <a href="kontak" class="text footer-link">Kontak Kami</a>
           </li>
 
         </ul>
@@ -341,15 +270,11 @@
           </li>
 
           <li>
-            <a href="#" class="text footer-link">Conditions</a>
+            <a href="#" class="text footer-link">Kritik dan Saran</a>
           </li>
 
           <li>
-            <a href="#" class="text footer-link">Terms of Use</a>
-          </li>
-
-          <li>
-            <a href="#" class="text footer-link">Our Services</a>
+            <a href="#" class="text footer-link">Pengaduan</a>
           </li>
 
           <li>

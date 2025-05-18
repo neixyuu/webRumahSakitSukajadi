@@ -243,15 +243,15 @@
           </li>
 
           <li>
-            <a href="#" class="text footer-link">Dokter</a>
+            <a href="dokter" class="text footer-link">Dokter</a>
           </li>
 
           <li>
-            <a href="#" class="text footer-link">Berita</a>
+            <a href="berita" class="text footer-link">Berita</a>
           </li>
 
           <li>
-            <a href="#" class="text footer-link">Kontak Kami</a>
+            <a href="kontak" class="text footer-link">Kontak Kami</a>
           </li>
 
         </ul>
@@ -263,15 +263,11 @@
           </li>
 
           <li>
-            <a href="#" class="text footer-link">Conditions</a>
+            <a href="#" class="text footer-link">Kritik dan Saran</a>
           </li>
 
           <li>
-            <a href="#" class="text footer-link">Terms of Use</a>
-          </li>
-
-          <li>
-            <a href="#" class="text footer-link">Our Services</a>
+            <a href="#" class="text footer-link">Pengaduan</a>
           </li>
 
           <li>

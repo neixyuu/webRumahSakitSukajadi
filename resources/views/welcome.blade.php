@@ -125,7 +125,7 @@
             <p class="hero-subtitle has-before" data-reveal="left">Selamat Datang di</p>
 
             <h1 class="headline-lg hero-title" data-reveal="left">
-              Rumah Sakit Umum Daerah Banyuasin
+              Rumah Sakit Umum Daerah Sukajadi
             </h1>
 
           </div>
@@ -201,24 +201,6 @@
 
                 <p class="card-text">
                   Lorem ipsum dolor sit amet, consectetur adipisicing
-                </p>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="service-card" data-reveal="bottom">
-
-                <div class="card-icon">
-                  <img src="./assets/images/mail.png" width="71" height="71" loading="lazy" alt="icon">
-                </div>
-
-                <h3 class="headline-sm card-title">
-                  <a href="#">Email</a>
-                </h3>
-
-                <p class="card-text">
-                  Main Email : rsud_ba@yahoo.co.id
                 </p>
 
               </div>
@@ -404,15 +386,15 @@
           </li>
 
           <li>
-            <a href="#" class="text footer-link">Dokter</a>
+            <a href="dokter" class="text footer-link">Dokter</a>
           </li>
 
           <li>
-            <a href="#" class="text footer-link">Berita</a>
+            <a href="berita" class="text footer-link">Berita</a>
           </li>
 
           <li>
-            <a href="#" class="text footer-link">Kontak Kami</a>
+            <a href="kontak" class="text footer-link">Kontak Kami</a>
           </li>
 
         </ul>
@@ -424,15 +406,11 @@
           </li>
 
           <li>
-            <a href="#" class="text footer-link">Conditions</a>
+            <a href="{{ url('kritiksaran') }}" class="text footer-link">Kritik dan Saran</a>
           </li>
 
           <li>
-            <a href="#" class="text footer-link">Terms of Use</a>
-          </li>
-
-          <li>
-            <a href="#" class="text footer-link">Our Services</a>
+            <a href="#" class="text footer-link">Pengaduan</a>
           </li>
 
           <li>

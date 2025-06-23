@@ -29,26 +29,32 @@
     <hr class="horizontal dark mt-0 mb-2">
     <div class="collapse navbar-collapse w-auto" id="sidenav-collapse-main">
       <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link text-dark" href="/admin/dashboard">
+      <li class="nav-item">
+          <a class="nav-link text-dark" href="{{ route('admin.dashboard') }}">
             <i class="material-symbols-rounded opacity-5">dashboard</i>
             <span class="nav-link-text ms-1">Dashboard</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active bg-gradient-dark text-white" href="/admin/dashboarddokter">
+          <a class="nav-link active bg-gradient-dark text-white" href="{{ url('admin/dashboarddokter') }}">
             <i class="material-symbols-rounded opacity-5">people</i>
             <span class="nav-link-text ms-1">Dokter</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-dark" href="#">
-            <i class="material-symbols-rounded opacity-5">medical_services</i>
-            <span class="nav-link-text ms-1">Layanan</span>
+          <a class="nav-link text-dark" href="{{ route('admin.dashboardkritiksaran') }}">
+            <i class="material-symbols-rounded opacity-5">book</i>
+            <span class="nav-link-text ms-1">KritikSaran</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-dark" href="/admin/dashboardberita">
+          <a class="nav-link text-dark" href="{{ route('admin.dashboardpengaduan') }}">
+            <i class="material-symbols-rounded opacity-5">book</i>
+            <span class="nav-link-text ms-1">Pengaduan</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="{{ url('admin/dashboardberita') }}">
             <i class="material-symbols-rounded opacity-5">newspaper</i>
             <span class="nav-link-text ms-1">Berita</span>
           </a>
@@ -107,10 +113,11 @@
                       <td class="ps-4">{{ $index + 1 }}</td>
                       <td class="ps-4">{{ $dokter->nama }}</td>
                       <td>{{ $dokter->spesialisasi }}</td>
-                      <td class="align-middle text-center">{{ $dokter->jadwal }}</td>
+                      <td class="align-middle text-center">{{ $dokter->hari }}</td>
+                      <td class="align-middle text-center">{{ $dokter->jam }}</td>
                       <td class="align-middle text-center">
-                        <a href="{{ route('admin.dokter.show', $dokter->id) }}" class="btn btn-info btn-sm px-3 py-1 me-1">View</a>
-                        <a href="{{ route('admin.dokter.edit', $dokter->id) }}" class="btn btn-warning btn-sm px-3 py-1 me-1">Edit</a>
+                        <!-- <a href="{{ route('admin.dokter.show', $dokter->id) }}" class="btn btn-info btn-sm px-3 py-1 me-1">View</a>
+                        <a href="{{ route('admin.dokter.edit', $dokter->id) }}" class="btn btn-warning btn-sm px-3 py-1 me-1">Edit</a> -->
                         <form action="{{ route('admin.dokter.destroy', $dokter->id) }}" method="POST" class="d-inline">
                             @csrf
                             @method('DELETE')

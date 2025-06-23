@@ -81,6 +81,8 @@
             transform: translateX(-5px);
         }
     </style>
+    <!-- Add SweetAlert2 CSS in head section -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
 </head>
 <body>
     <a href="{{ url('/') }}" class="back-button">
@@ -109,10 +111,10 @@
                     @csrf
                     <div class="row">
                         <div class="col-12 mb-3">
-                            <input type="text" name="name" id="name" placeholder="Nama" required>
+                            <input type="text" name="nama" id="nama" placeholder="Nama" required>
                         </div>
                         <div class="col-12 mb-3">
-                            <input type="tel" name="phone" id="phone" pattern="[0-9]*" minlength="10" maxlength="13" placeholder="Nomor Telepon" required>
+                            <input type="tel" name="no_telp" id="no_telp" pattern="[0-9]*" minlength="10" maxlength="13" placeholder="Nomor Telepon" required>
                         </div>
                         <div class="col-12 mb-3">
                             <textarea name="message" id="message" rows="5" placeholder="Pesan" required></textarea>
@@ -126,8 +128,26 @@
         </div>
     </div>
 
-    <!-- Scripts -->
+    <!-- Update scripts section at the bottom -->
     <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    @if(session('success'))
+    <script>
+        Swal.fire({
+            icon: 'success',
+            title: 'Terima Kasih!',
+            text: '{{ session('success') }}',
+            confirmButtonColor: '#0066ff',
+            timer: 3000,
+            timerProgressBar: true
+        }).then((result) => {
+            if (result.dismiss === Swal.DismissReason.timer) {
+                window.location.href = '{{ url('/') }}';
+            }
+        });
+    </script>
+    @endif
 </body>
 </html>

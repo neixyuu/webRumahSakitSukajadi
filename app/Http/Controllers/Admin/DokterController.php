@@ -25,7 +25,8 @@ class DokterController extends Controller
         $validated = $request->validate([
             'nama' => 'required',
             'spesialisasi' => 'required',
-            'jadwal' => 'required',
+            'hari' => 'required',
+            'jam' => 'required',
             'foto' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
             'deskripsi' => 'nullable'
         ]);
@@ -55,7 +56,8 @@ class DokterController extends Controller
         $validated = $request->validate([
             'nama' => 'required',
             'spesialisasi' => 'required',
-            'jadwal' => 'required',
+            'hari' => 'required',
+            'jam' =>'required',
             'foto' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
             'deskripsi' => 'nullable'
         ]);

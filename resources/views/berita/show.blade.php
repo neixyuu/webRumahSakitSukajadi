@@ -69,13 +69,14 @@
     <div class="container mt-5">
         <div class="card">
             @if($berita->gambar)
+                <!-- Add this line to debug the URL -->
+                <div style="display: none">Debug URL: {{ Storage::url($berita->gambar) }}</div>
                 <img src="{{ Storage::url($berita->gambar) }}" class="card-img-top" alt="{{ $berita->judul }}">
             @endif
             <div class="card-body">
                 <h1 class="card-title">{{ $berita->judul }}</h1>
                 <div class="meta-info">
                     <span class="category">{{ $berita->kategori }}</span>
-                    •
                     <span class="date">{{ \Carbon\Carbon::parse($berita->created_at)->format('d F, Y') }}</span>
                 </div>
                 <div class="card-text">

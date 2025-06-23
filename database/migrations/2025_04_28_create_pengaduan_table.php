@@ -8,17 +8,23 @@ return new class extends Migration
 {
     public function up()
     {
-        Schema::create('feedback', function (Blueprint $table) {
+        Schema::create('pengaduan', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
             $table->string('no_telp');
+            $table->string('email');
+            $table->string('no_rm')->nullable();
+            $table->string('kategori');
+            $table->string('lokasi');
+            $table->date('tanggal_kejadian');
             $table->text('message');
+            $table->string('status')->default('Belum Diproses');
             $table->timestamps();
         });
     }
 
     public function down()
     {
-        Schema::dropIfExists('feedback');
+        Schema::dropIfExists('pengaduan');
     }
 };

@@ -10,14 +10,19 @@ class FeedbackController extends Controller
 {
     public function index()
     {
-        return view('admin.feedback.feedback', [
+        return view('admin.adminfeedback', [
             'feedbacks' => Feedback::latest()->get()
         ]);
+    }
+
+    public function show(Feedback $feedback)
+    {
+        return view('admin.kritiksaran.show', compact('feedback'));
     }
 
     public function destroy(Feedback $feedback)
     {
         Feedback::destroy($feedback->id);
-        return redirect('/admin/feedback')->with('success', 'Feedback has been deleted!');
+        return redirect('/admin/adminfeedback')->with('success', 'Feedback has been deleted!');
     }
 }

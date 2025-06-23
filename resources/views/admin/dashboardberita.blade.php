@@ -29,26 +29,32 @@
     <hr class="horizontal dark mt-0 mb-2">
     <div class="collapse navbar-collapse w-auto" id="sidenav-collapse-main">
       <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link text-dark" href="/admin/dashboard">
+      <li class="nav-item">
+          <a class="nav-link text-dark" href="{{ route('admin.dashboard') }}">
             <i class="material-symbols-rounded opacity-5">dashboard</i>
             <span class="nav-link-text ms-1">Dashboard</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-dark" href="/admin/dashboarddokter">
+          <a class="nav-link text-dark" href="{{ url('admin/dashboarddokter') }}">
             <i class="material-symbols-rounded opacity-5">people</i>
             <span class="nav-link-text ms-1">Dokter</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-dark" href="#">
-            <i class="material-symbols-rounded opacity-5">medical_services</i>
-            <span class="nav-link-text ms-1">Layanan</span>
+          <a class="nav-link text-dark" href="{{ route('admin.dashboardkritiksaran') }}">
+            <i class="material-symbols-rounded opacity-5">book</i>
+            <span class="nav-link-text ms-1">KritikSaran</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active bg-gradient-dark text-white" href="/admin/dashboardberita">
+          <a class="nav-link text-dark" href="{{ route('admin.dashboardpengaduan') }}">
+            <i class="material-symbols-rounded opacity-5">book</i>
+            <span class="nav-link-text ms-1">Pengaduan</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active bg-gradient-dark text-white" href="{{ url('admin/dashboardberita') }}">
             <i class="material-symbols-rounded opacity-5">newspaper</i>
             <span class="nav-link-text ms-1">Berita</span>
           </a>
@@ -114,7 +120,7 @@
                         <form action="{{ route('admin.berita.destroy', $berita->id) }}" method="POST" class="d-inline">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-danger btn-sm px-3 py-1" onclick="return confirm('Are you sure you want to delete this article?')">Delete</button>
+                            <button type="submit" class="btn btn-danger btn-sm px-3 py-1" onclick="return confirm('Hapus Berita ini ?')">Delete</button>
                         </form>
                       </td>
                     </tr>

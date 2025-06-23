@@ -58,8 +58,8 @@ class BeritaController extends Controller
         ]);
     
         if ($request->hasFile('gambar')) {
-            $imagePath = $request->file('gambar')->store('public/berita');
-            $validated['gambar'] = str_replace('public/', '', $imagePath);
+            $imagePath = $request->file('gambar')->store('berita', 'public');
+            $validated['gambar'] = $imagePath;
         }
     
         Berita::create($validated);

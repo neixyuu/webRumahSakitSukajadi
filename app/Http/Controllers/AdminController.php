@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Feedback;
 
 class AdminController extends Controller
 {
@@ -19,7 +20,7 @@ class AdminController extends Controller
             'password' => ['required'],
         ]);
 
-        if (Auth::attempt($credentials)) {
+        if (Auth::attempt($credentials)) {  // Changed from Auth::guard('admin')->attempt
             $request->session()->regenerate();
             return redirect()->intended('admin/dashboard');
         }
@@ -36,9 +37,21 @@ class AdminController extends Controller
 
     public function logout(Request $request)
     {
-        Auth::logout();
+        Auth::guard('admin')->logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
         return redirect('/');
+    }
+
+    public function dashboardKritikSaran()
+    {
+        $feedback = Feedback::orderBy('created_at', 'desc')->get();
+        return view('admin.dashboardkritiksaran', compact('feedback'));
+    }
+
+    public function destroyKritikSaran(Feedback $feedback)
+    {
+        $feedback->delete();
+        return redirect()->route('admin.dashboardkritiksaran')->with('success', 'Feedback deleted successfully');
     }
 }

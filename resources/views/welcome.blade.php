@@ -10,12 +10,12 @@
     - primary meta tags
   -->
   <title>Rumah Sakit Umum Daerah Banyuasin</title>
-  <meta name="title" content="Doclab - home">
+  <meta name="title" content="">
 
   <!-- 
     - favicon
   -->
-  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="shortcut icon" href="./logoRSUD.png" type="image/svg+xml">
 
   <!-- 
     - google font link
@@ -60,7 +60,7 @@
     <div class="container">
 
       <a href="/" class="logo">
-        <img src="./assets/images/logo.svg" width="136" height="46" alt="Doclab home">
+        <img src="./assets/images/logoRSUD.png" width="140" height="50" alt="RSUD Sukajadi">
       </a>
 
       <nav class="navbar" data-navbar>
@@ -68,7 +68,7 @@
         <div class="navbar-top">
 
           <a href="/" class="logo">
-            <img src="./assets/images/logo.svg" width="136" height="46" alt="Doclab home">
+            <img src="./assets/images/logoRSUD.png" width="140" height="50" alt="RSUD Sukajadi">
           </a>
 
           <button class="nav-close-btn" aria-label="clsoe menu" data-nav-toggler>
@@ -181,8 +181,7 @@
                 </h3>
 
                 <p class="card-text">
-                Office Telephone : 0029129102320
-                Mobile : 0811 7321 881
+                Mobile : 0822 7988 7861
                 </p>
 
               </div>
@@ -200,7 +199,8 @@
                 </h3>
 
                 <p class="card-text">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing
+                  Siang : 10.00 - 12.00 WIB<br>
+                  Sore : 17.00 - 19.00
                 </p>
 
               </div>
@@ -229,93 +229,70 @@
             <h2 class="headline-md" data-reveal="left">Rumah Sakit Umum Daerah Sukajadi</h2>
 
             <p class="section-text" data-reveal="left">
-            adalah Rumah Sakit Umum Daerah milik Pemerintah Kabupaten Banyuasin, 
-          berlokasi di KM 14, Jalan Palembang Betung. Kami hadir untuk memberikan layanan kesehatan yang terjangkau, profesional, dan 
-          merata bagi masyarakat Banyuasin dan sekitarnya.
+              RSUD Sukajadi didirikan Tahun 2018 dan mulai beroperasional pada Bulan
+              Mei 2018, dimana diawali dengan pelayanan pemudik lebaran sebagai posko
+              kesehatan. RSUD Sukajadi diresmikan pada tanggal 03 Agustus 2019 oleh
+              Bupati Banyuasin H. Askolani Jasi, SH, MH.
             </p>
 
             <ul class="tab-list" data-reveal="left">
 
               <li>
-                <button class="tab-btn active" data-tab="vision">Vision</button>
+                <button class="tab-btn active" data-tab="vision">VISI</button>
               </li>
 
               <li>
-                <button class="tab-btn" data-tab="mission">Mission</button>
+                <button class="tab-btn" data-tab="mission">MISI</button>
               </li>
 
               <li>
-                <button class="tab-btn" data-tab="strategy">Strategy</button>
+                <button class="tab-btn" data-tab="strategy">MOTTO</button>
               </li>
             </ul>
 
             <div class="tab-content" data-reveal="left">
               <div class="tab-pane active" id="vision">
                 <p class="tab-text">
-                  Menjadi Rumah Sakit terdepan dalam pelayanan kesehatan yang berkualitas dan terpercaya di Kabupaten Banyuasin.
+                Menjadi Rumah Sakit kepercayaan masyarakat dengan pelayanan prima, bermutu dan profesional
+
                 </p>
               </div>
 
               <div class="tab-pane" id="mission">
                 <p class="tab-text">
-                  1. Memberikan pelayanan kesehatan yang profesional dan bermutu tinggi<br>
-                  2. Mengembangkan SDM yang kompeten dan berdedikasi<br>
-                  3. Menyediakan fasilitas kesehatan yang modern dan terjangkau
+                1. Menyelenggarakan pelayanan
+                kesehatan yang paripurna dan
+                terjangkau oleh semua lapisan
+                masyarakat dengan berorientasi pada
+                keselamatan pasien dan kepuasan
+                pelanggan<br>
+                2. Meningkatkan sarana dan prasarana
+                kesehatan sesuai standar<br>
+                3. Meningkatkan pengetahuan dan
+                keterampilan sumber daya manusia,
+                sehingga mampu melaksanakan
+                pelayanan yang profesional<br>
+                4. Menciptakan kemandirian Rumah
+                Sakit dengan mengembangkan
+                kemitraan serta membina
+                kepercayaan masyarakat terhadap
+                pelayanan Rumah Sakit.
                 </p>
               </div>
 
               <div class="tab-pane" id="strategy">
                 <p class="tab-text">
-                  1. Peningkatan kualitas layanan berkelanjutan<br>
-                  2. Pengembangan infrastruktur modern<br>
-                  3. Optimalisasi sistem manajemen rumah sakit
+                “Keselamatan Pasien adalah Prioritas Kami”
                 </p>
               </div>
             </div>
 
-            <!-- <p class="tab-text" data-reveal="left">
-              Aliquam faucibus, odio nec commodo aliquam, neque felis placerat dui, a porta ante lectus dapibus est.
-              Aliquam a bibendum mi, sed condimentum
-            </p> -->
-
-            <!-- <div class="wrapper">
-
-              <ul class="about-list">
-
-                <li class="about-item" data-reveal="left">
-                  <ion-icon name="checkmark-circle-outline"></ion-icon>
-
-                  <span class="span">Sonsectetur adipisicing elit</span>
-                </li>
-
-                <li class="about-item" data-reveal="left">
-                  <ion-icon name="checkmark-circle-outline"></ion-icon>
-
-                  <span class="span">Exercitation ullamco laboris</span>
-                </li>
-
-                <li class="about-item" data-reveal="left">
-                  <ion-icon name="checkmark-circle-outline"></ion-icon>
-
-                  <span class="span">Eiusmod tempor incididunt</span>
-                </li>
-
-                <li class="about-item" data-reveal="left">
-                  <ion-icon name="checkmark-circle-outline"></ion-icon>
-
-                  <span class="span">Aolore magna aliqua</span>
-                </li>
-
-              </ul>
-
-            </div> -->
-
           </div>
 
-          <figure class="about-banner" data-reveal="right">
+          <!-- <figure class="about-banner" data-reveal="right">
             <img src="./assets/images/about-banner.png" width="554" height="678" loading="lazy" alt="about banner"
               class="w-100">
-          </figure>
+          </figure> -->
 
         </div>
       </section>
@@ -338,7 +315,7 @@
         <div class="footer-brand" data-reveal="bottom">
 
           <a href="#" class="logo">
-            <img src="./assets/images/logo.svg" width="136" height="46" loading="lazy" alt="Doclab home">
+            <img src="./assets/images/logoRSUD.png" width="150" height="46" loading="lazy" alt="">
           </a>
 
           <ul class="contact-list has-after">
@@ -353,6 +330,9 @@
                 <p>
                   Main Email : <a href="mailto:contact@website.com" class="contact-link">rsud_ba@yahoo.co.id</a>
                 </p>
+                <p>
+                  Instagram : @rsud_sukajadi
+                </p>
               </div>
 
             </li>
@@ -364,12 +344,9 @@
               </div>
 
               <div>
-                <p>
-                  Office Telephone : <a href="tel:0029129102320" class="contact-link">0029129102320</a>
-                </p>
 
                 <p>
-                  Mobile : <a href="tel:000232439493" class="contact-link">0811 7321 881</a>
+                  Mobile : <a href="tel:000232439493" class="contact-link">0822 7988 7861</a>
                 </p>
               </div>
 
@@ -410,7 +387,7 @@
           </li>
 
           <li>
-            <a href="#" class="text footer-link">Pengaduan</a>
+            <a href="{{ route('pengaduan') }}" class="text footer-link">Pengaduan</a>
           </li>
 
           <li>

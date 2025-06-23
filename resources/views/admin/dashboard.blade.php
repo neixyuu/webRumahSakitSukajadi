@@ -46,15 +46,15 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-dark" href="#">
-            <i class="material-symbols-rounded opacity-5">medical_services</i>
-            <span class="nav-link-text ms-1">Layanan</span>
+          <a class="nav-link text-dark" href="{{ route('admin.dashboardkritiksaran') }}">
+            <i class="material-symbols-rounded opacity-5">book</i>
+            <span class="nav-link-text ms-1">KritikSaran</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-dark" href="{{ route('admin.dashboardfeedback') }}">
+          <a class="nav-link text-dark" href="{{ route('admin.dashboardpengaduan') }}">
             <i class="material-symbols-rounded opacity-5">book</i>
-            <span class="nav-link-text ms-1">KritikSaran</span>
+            <span class="nav-link-text ms-1">Pengaduan</span>
           </a>
         </li>
         <li class="nav-item">
@@ -140,20 +140,26 @@
     new Chart(ctx, {
       type: 'bar',
       data: {
-        labels: ['Dokter', 'Berita'],
+        labels: ['Dokter', 'Berita', 'Kritik & Saran', 'Pengaduan'],
         datasets: [{
           label: 'Total Count',
           data: [
             {{ \App\Models\Dokter::count() }}, 
-            {{ \App\Models\Berita::count() }}
+            {{ \App\Models\Berita::count() }},
+            {{ \App\Models\Feedback::count() }},
+            {{ \App\Models\Pengaduan::count() }}
           ],
           backgroundColor: [
             'rgba(75, 192, 192, 0.2)',
-            'rgba(153, 102, 255, 0.2)'
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(255, 159, 64, 0.2)',
+            'rgba(255, 99, 132, 0.2)'
           ],
           borderColor: [
             'rgba(75, 192, 192, 1)',
-            'rgba(153, 102, 255, 1)'
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)',
+            'rgba(255, 99, 132, 1)'
           ],
           borderWidth: 1
         }]
@@ -171,7 +177,7 @@
         plugins: {
           title: {
             display: true,
-            text: 'Total Dokter dan Berita'
+            text: 'Statistik Data RSUD Banyuasin'
           }
         }
       }

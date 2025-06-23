@@ -19,7 +19,14 @@
                     </div>
                     @if($berita->gambar)
                     <div class="mb-3">
+                        <!-- Debugging output -->
+                        <p>Image Path: {{ $berita->gambar }}</p>
+                        <p>Full URL: {{ asset('storage/' . $berita->gambar) }}</p>
                         <img src="{{ asset('storage/' . $berita->gambar) }}" alt="Article Image" class="img-fluid" style="max-width: 500px;">
+                    </div>
+                    @else
+                    <div class="mb-3">
+                        <p>No image available</p>
                     </div>
                     @endif
                     <div class="mb-3">

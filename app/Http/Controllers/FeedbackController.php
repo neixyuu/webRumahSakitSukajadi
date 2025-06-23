@@ -14,15 +14,14 @@ class FeedbackController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => 'required',
-            'email' => 'required|email',
-            'message' => 'required'
+        $feedback = Feedback::create([
+            'nama' => $request->nama,
+            'no_telp' => $request->no_telp,
+            'message' => $request->message,
+            'status' => 'Belum Dibaca'
         ]);
 
-        Feedback::create($request->all());
-
-        return redirect()->back()->with('success', 'Terima kasih atas feedback Anda!');
+        return redirect()->back()->with('success', 'Pesan Anda telah berhasil terkirim. Terima kasih atas masukan Anda!');
     }
 
     public function adminIndex()

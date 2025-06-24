@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Feedback;
+use App\Models\Pengaduan;
 use Illuminate\Http\Request;
 
 class FeedbackController extends Controller
@@ -18,7 +19,7 @@ class FeedbackController extends Controller
             'nama' => $request->nama,
             'no_telp' => $request->no_telp,
             'message' => $request->message,
-            'status' => 'Belum Dibaca'
+
         ]);
 
         return redirect()->back()->with('success', 'Pesan Anda telah berhasil terkirim. Terima kasih atas masukan Anda!');
@@ -30,9 +31,10 @@ class FeedbackController extends Controller
         return view('admin.feedback.index', compact('feedback'));
     }
 
-    public function destroy(Feedback $feedback)
+    public function destroyPengaduan($id)
     {
-        $feedback->delete();
-        return redirect()->route('admin.feedback.index')->with('success', 'Feedback berhasil dihapus');
+        $pengaduan = Pengaduan::findOrFail($id);
+        $pengaduan->delete();
+        return redirect()->route('admin.dashboardpengaduan')->with('success', 'Pengaduan berhasil dihapus');
     }
 }

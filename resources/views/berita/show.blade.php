@@ -41,10 +41,10 @@
             top: 20px;
             left: 20px;
             background: white;
-            border: none;
+            border: circle;
             border-radius: 50%;
-            width: 40px;
-            height: 40px;
+            width: 50px;
+            height: 50px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
             cursor: pointer;
             display: flex;
@@ -53,7 +53,8 @@
             z-index: 1000;
         }
         .back-button:hover {
-            background: #f8f9fa;
+            background:rgb(255, 255, 255);
+            
         }
         .card-text {
             line-height: 1.6;

@@ -26,7 +26,7 @@
                                 <p>{{ $pengaduan->no_telp }}</p>
                             </div>
                             <div class="mb-3">
-                                <strong>No. RM:</strong>
+                                <strong>No. Rekam Medis:</strong>
                                 <p>{{ $pengaduan->no_rm ?: '-' }}</p>
                             </div>
                         </div>
@@ -43,10 +43,6 @@
                                 <strong>Tanggal Kejadian:</strong>
                                 <p>{{ $pengaduan->tanggal_kejadian }}</p>
                             </div>
-                            <!-- <div class="mb-3">
-                                <strong>Status:</strong>
-                                <p class="badge bg-{{ $pengaduan->status == 'Selesai' ? 'success' : 'warning' }}">{{ $pengaduan->status }}</p>
-                            </div> -->
                         </div>
                     </div>
                     <div class="row mt-4">
@@ -59,16 +55,6 @@
                     </div>
                     <div class="row mt-4">
                         <div class="col-12">
-                            <!-- <form action="{{ route('admin.pengaduan.updateStatus', $pengaduan->id) }}" method="POST" class="d-inline">
-                                @csrf
-                                @method('PUT')
-                                <select name="status" class="form-select d-inline-block w-auto me-2">
-                                    <option value="Pending" {{ $pengaduan->status == 'Pending' ? 'selected' : '' }}>Pending</option>
-                                    <option value="Proses" {{ $pengaduan->status == 'Proses' ? 'selected' : '' }}>Proses</option>
-                                    <option value="Selesai" {{ $pengaduan->status == 'Selesai' ? 'selected' : '' }}>Selesai</option>
-                                </select>
-                                <button type="submit" class="btn btn-success btn-sm">Update Status</button>
-                            </form> -->
                             <a href="{{ route('admin.dashboardpengaduan') }}" class="btn btn-secondary btn-sm ms-2">Kembali</a>
                         </div>
                     </div>

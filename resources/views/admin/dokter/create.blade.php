@@ -38,6 +38,12 @@
           </a>
         </li>
         <li class="nav-item">
+          <a class="nav-link text-dark" href="{{ url('admin/dashboardberita') }}">
+            <i class="material-symbols-rounded opacity-5">newspaper</i>
+            <span class="nav-link-text ms-1">Berita</span>
+          </a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link text-dark" href="{{ route('admin.dashboardkritiksaran') }}">
             <i class="material-symbols-rounded opacity-5">book</i>
             <span class="nav-link-text ms-1">KritikSaran</span>
@@ -47,12 +53,6 @@
           <a class="nav-link text-dark" href="{{ route('admin.dashboardpengaduan') }}">
             <i class="material-symbols-rounded opacity-5">book</i>
             <span class="nav-link-text ms-1">Pengaduan</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-dark" href="{{ url('admin/dashboardberita') }}">
-            <i class="material-symbols-rounded opacity-5">newspaper</i>
-            <span class="nav-link-text ms-1">Berita</span>
           </a>
         </li>
       </ul>

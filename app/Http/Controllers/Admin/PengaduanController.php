@@ -15,14 +15,6 @@ class PengaduanController extends Controller
         ]);
     }
 
-    public function updateStatus(Request $request, Pengaduan $pengaduan)
-    {
-        $pengaduan->update([
-            'status' => $request->status
-        ]);
-
-        return redirect()->back()->with('success', 'Status pengaduan berhasil diupdate!');
-    }
 
     public function destroy(Pengaduan $pengaduan)
     {

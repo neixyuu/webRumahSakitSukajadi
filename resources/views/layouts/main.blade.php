@@ -43,6 +43,12 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link {{ Request::is('berita*') ? 'active bg-gradient-dark text-white' : 'text-dark' }}" href="/berita">
+                        <i class="material-symbols-rounded opacity-5">newspaper</i>
+                        <span class="nav-link-text ms-1">Berita</span>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link {{ Request::is('layanan*') ? 'active bg-gradient-dark text-white' : 'text-dark' }}" href="/layanan">
                         <i class="material-symbols-rounded opacity-5">medical_services</i>
                         <span class="nav-link-text ms-1">Layanan</span>
@@ -52,12 +58,6 @@
                     <a class="nav-link {{ Request::is('kritiksaran*') ? 'active bg-gradient-dark text-white' : 'text-dark' }}" href="{{ route('feedback.index') }}">
                         <i class="material-symbols-rounded opacity-5">book</i>
                         <span class="nav-link-text ms-1">KritikSaran</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link {{ Request::is('berita*') ? 'active bg-gradient-dark text-white' : 'text-dark' }}" href="/berita">
-                        <i class="material-symbols-rounded opacity-5">newspaper</i>
-                        <span class="nav-link-text ms-1">Berita</span>
                     </a>
                 </li>
             </ul>

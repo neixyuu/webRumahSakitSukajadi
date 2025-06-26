@@ -32,7 +32,7 @@
                                         <p class="text-xs font-weight-bold mb-0">{{ $loop->iteration }}</p>
                                     </td>
                                     <td class="ps-4">
-                                        <p class="text-xs font-weight-bold mb-0">{{ $p->nama }}</p>
+                                        <p class="text-xs font-weight-bold mb-0">{{ substr($p->nama, 0, 2) . str_repeat('*', strlen($p->nama) - 2) }}</p>
                                         <p class="text-xs text-secondary mb-0">RM: {{ $p->no_rm ?: '-' }}</p>
                                     </td>
                                     <td>

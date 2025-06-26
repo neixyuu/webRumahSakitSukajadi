@@ -128,7 +128,7 @@
                     <div class="row">
                         <div class="col-md-6 mb-3">
                             <label for="nama" class="form-label">Nama Lengkap</label>
-                            <input type="text" name="nama" id="nama" placeholder="Nama Lengkap" required>
+                            <input type="text" name="nama" id="nama" placeholder="Nama Lengkap ( Privasi terjaga nama akan disensor )" required>
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="no_telp" class="form-label">Nomor Telepon</label>

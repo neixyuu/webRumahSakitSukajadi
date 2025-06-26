@@ -111,7 +111,7 @@
                     @csrf
                     <div class="row">
                         <div class="col-12 mb-3">
-                            <input type="text" name="nama" id="nama" placeholder="Nama" required>
+                            <input type="text" name="nama" id="nama" placeholder="Nama ( Privasi terjaga nama akan disensor )" required>
                         </div>
                         <div class="col-12 mb-3">
                             <input type="tel" name="no_telp" id="no_telp" pattern="[0-9]*" minlength="10" maxlength="13" placeholder="Nomor Telepon" required>

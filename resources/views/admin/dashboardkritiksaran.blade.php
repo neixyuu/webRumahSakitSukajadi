@@ -113,7 +113,7 @@
                     @foreach($feedback as $index => $item)
                     <tr>
                       <td class="ps-4">{{ $index + 1 }}</td>
-                      <td class="ps-4">{{ $item->nama }}</td>
+                      <td class="ps-4">{{ substr($item->nama, 0, 2) . str_repeat('*', strlen($item->nama) - 2) }}</td>
                       <td>{{ $item->no_telp }}</td>
                       <td>{{ Str::limit($item->message, 10) }}</td>
                       <td class="align-middle text-center">{{ $item->created_at->format('d/m/Y') }}</td>

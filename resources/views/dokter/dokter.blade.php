@@ -98,6 +98,9 @@
           <li class="navbar-item">
             <a href="kontak" class="navbar-link title-md">Kontak</a>
           </li>
+          <li class="navbar-item">
+            <a href="https://rsudsukajadi.web.id/pendaftaran" class="navbar-link title-md">Pendaftaran</a>
+          </li>
         </ul>
       </nav>
           <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
@@ -226,7 +229,7 @@
 
               <div>
                 <p>
-                  Main Email : <a href="mailto:contact@website.com" class="contact-link">rsud_ba@yahoo.co.id</a>
+                Main Email : <a href="mailto:rs.sukajadi@gmail.com" class="contact-link">rs.sukajadi@gmail.com</a>
                 </p>
                 <p>
                   Instagram : @rsud_sukajadi

@@ -130,22 +130,6 @@
 
                     <div class="row">
                       <div class="col-md-12">
-                        <div class="mb-3">
-                            <label for="logo" class="form-label">Logo Dokter</label>
-                            <select class="form-control border border-2 border-secondary" id="logo" name="logo" required>
-                                <option value="kandungan">Dokter Spesialis Kebidanan dan Kandungan</option>
-                                <option value="penyakit_dalam">Dokter Gigi</option>
-                                <option value="bedah">Dokter Spesialis Bedah</option>
-                                <option value="anak">Dokter Spesialis Anak</option>
-                                <option value="mata">Dokter Spesialis Mata</option>
-                                <option value="gigi">Dokter Spesialis Gigi</option>
-                            </select>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="row">
-                      <div class="col-md-12">
                         <button type="submit" class="btn btn-primary">Save Doctor</button>
                         <a href="{{ route('admin.dashboarddokter') }}" class="btn btn-secondary">Cancel</a>
                       </div>

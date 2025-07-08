@@ -15,7 +15,7 @@
   <!-- 
     - favicon
   -->
-  <link rel="shortcut icon" href="./logoRSUD.png" type="image/svg+xml">
+  <link rel="shortcut icon" href="./logo.svg" type="image/svg+xml">
 
   <!-- 
     - google font link

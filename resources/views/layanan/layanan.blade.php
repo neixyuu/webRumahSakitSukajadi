@@ -148,39 +148,39 @@
       <section class="section listing" aria-labelledby="listing-label">
         <div class="container">
           <div class="text-center mb-5">
-            <p class="section-subtitle title-lg" id="listing-label" data-reveal="left">Layanan yang Tersedia</p>
-            <h2 class="headline-md" data-reveal="left">Pelayanan Kesehatan RSUD Sukajadi</h2>
+            <p class="section-subtitle" id="listing-label">Layanan yang Tersedia</p>
+            <h2 class="section-title">Pelayanan Kesehatan RSUD Sukajadi</h2>
           </div>
 
-          <div class="service-list" data-reveal="bottom">
-            <div class="service-item">
-              <h3 class="headline-sm">Instalasi Rawat Jalan (Poliklinik)</h3>
-              <p class="text">Melayani pasien rawat jalan setiap hari kerja.</p>
+          <div class="service-list">
+            <div class="service-item" onclick="openModal('Instalasi Rawat Jalan (Poliklinik)', '', 'poliklinik')">
+              <h3>Instalasi Rawat Jalan (Poliklinik)</h3>
+              <p>Melayani pasien rawat jalan setiap hari kerja.</p>
             </div>
 
-            <div class="service-item">
-              <h3 class="headline-sm">Instalasi Gawat Darurat (IGD)</h3>
-              <p class="text">Melayani pasien gawat darurat selama 24 jam nonstop.</p>
+            <div class="service-item" onclick="openModal('Instalasi Gawat Darurat (IGD)', 'Melayani pasien gawat darurat selama 24 jam nonstop.')">
+              <h3>Instalasi Gawat Darurat (IGD)</h3>
+              <p>Melayani pasien gawat darurat selama 24 jam nonstop.</p>
             </div>
 
-            <div class="service-item">
-              <h3 class="headline-sm">Pendaftaran Pasien</h3>
-              <p class="text">Pendaftaran dapat dilakukan melalui WhatsApp untuk mempermudah proses administrasi.</p>
+            <div class="service-item" onclick="openModal('Pendaftaran Pasien', 'Pendaftaran dapat dilakukan melalui WhatsApp untuk mempermudah proses administrasi.')">
+              <h3>Pendaftaran Pasien</h3>
+              <p>Pendaftaran dapat dilakukan melalui WhatsApp untuk mempermudah proses administrasi.</p>
             </div>
 
-            <div class="service-item">
-              <h3 class="headline-sm">Jadwal Poliklinik</h3>
-              <p class="text">Informasi jadwal praktik dokter dan poliklinik tersedia secara online.</p>
+            <div class="service-item" onclick="openModal('Jadwal Poliklinik', 'Informasi jadwal praktik dokter dan poliklinik tersedia secara online.')">
+              <h3>Jadwal Poliklinik</h3>
+              <p>Informasi jadwal praktik dokter dan poliklinik tersedia secara online.</p>
             </div>
 
-            <div class="service-item">
-              <h3 class="headline-sm">Fasilitas Tempat Tidur</h3>
-              <p class="text">Kapasitas sebanyak 28 tempat tidur untuk perawatan pasien.</p>
+            <div class="service-item" onclick="openModal('Fasilitas Tempat Tidur', 'Kapasitas sebanyak 50 tempat tidur untuk perawatan pasien.')">
+              <h3>Fasilitas Tempat Tidur</h3>
+              <p>Kapasitas sebanyak 50 tempat tidur untuk perawatan pasien.</p>
             </div>
 
-            <div class="service-item">
-              <h3 class="headline-sm">Pengembangan Layanan</h3>
-              <p class="text">RSUD Sukajadi terus meningkatkan kualitas pelayanan dengan menambah fasilitas dan memperkuat tenaga medis.</p>
+            <div class="service-item" onclick="openModal('Pengembangan Layanan', 'RSUD Sukajadi terus meningkatkan kualitas pelayanan dengan menambah fasilitas dan memperkuat tenaga medis.')">
+              <h3>Pengembangan Layanan</h3>
+              <p>RSUD Sukajadi terus meningkatkan kualitas pelayanan dengan menambah fasilitas dan memperkuat tenaga medis.</p>
             </div>
           </div>
         </div>
@@ -338,3 +338,51 @@
 </body>
 
 </html>
+
+<!-- Modal -->
+<div id="serviceModal" class="modal">
+    <div class="modal-content">
+        <button class="modal-close" onclick="closeModal()">&times;</button>
+        <h2 id="modalTitle" class="headline-sm"></h2>
+        <p id="modalDescription"></p>
+    </div>
+</div>
+
+<!-- Modal JavaScript -->
+<script>
+function openModal(title, description, type = 'default') {
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDescription = document.getElementById('modalDescription');
+    modalTitle.textContent = title;
+    
+    if (type === 'poliklinik') {
+        modalDescription.innerHTML = `
+            <ul class="poli-list">
+                <li>Poli Umum</li>
+                <li>Poli Kandungan</li>
+                <li>Poli Gigi</li>
+                <li>Poli Penyakit Dalam</li>
+                <li>Poli Anak</li>
+                <li>Poli Bedah</li>
+                <li>Poli Mata</li>
+            </ul>
+        `;
+    } else {
+        modalDescription.textContent = description;
+    }
+    
+    document.getElementById('serviceModal').classList.add('active');
+}
+
+function closeModal() {
+    document.getElementById('serviceModal').classList.remove('active');
+}
+
+// Close modal when clicking outside
+window.onclick = function(event) {
+    const modal = document.getElementById('serviceModal');
+    if (event.target === modal) {
+        closeModal();
+    }
+}
+</script>

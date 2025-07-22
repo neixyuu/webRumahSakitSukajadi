@@ -2,359 +2,245 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap"
+        rel="stylesheet">
 
-  <!-- 
-    - primary meta tags
-  -->
-  <title>Rumah Sakit Umum Daerah Banyuasin</title>
-  <meta name="title" content="Doclab - home">
+    <title>Rumah Sakit Umum Daerah Banyuasin - List Dokter</title>
 
-  <!-- 
-    - favicon
-  -->
-  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- 
-    - google font link
-  -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Rubik:wght@400;500;700&display=swap"
-    rel="stylesheet">
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/style_welcome.css">
+    <link rel="stylesheet" href="assets/css/owl.css">
+    
+    <!-- Custom CSS untuk styling khusus halaman dokter -->
+    <style>
+        .product-item img {
+            height: 250px;
+            object-fit: cover;
+        }
 
-  <!-- 
-    - custom css link
-  -->
-  <link rel="stylesheet" href="assets/css/style.css">
+        .product-item .doctor-photo {
+            border-radius: 8px !important; /* Ubah dari 50% menjadi 8px untuk bentuk kotak dengan sudut sedikit melengkung */
+            object-fit: cover !important;
+            width: 100% !important;
+            height: 250px !important;
+            border: 4px solid white !important;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1) !important;
+        }
 
-  <!-- 
-    - preload images
-  -->
-  <link rel="preload" as="image" href="./assets/images/hero-banner.png">
-  <link rel="preload" as="image" href="./assets/images/hero-bg.png">
+        .product-item:hover {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transform: translateY(-5px);
+        }
 
+        .product-item .down-content p {
+            margin-bottom: 8px;
+            font-size: 13px;
+            color: #666;
+        }
+
+        .product-item .down-content h6 {
+            font-weight: 600;
+        }
+    </style>
 </head>
 
-<body id="top">
-
-  <!-- 
-    - #PRELOADER
-  -->
-
-  <div class="preloader" data-preloader>
-    <div class="circle"></div>
-  </div>
-
-
-
-
-
-  <!-- 
-    - #HEADER
-  -->
-
-  <header class="header" data-header>
-    <div class="container">
-
-      <a href="/" class="logo">
-        <img src="./assets/images/logoRSUD.png" width="140" height="50" alt="RSUD Sukajadi">
-      </a>
-
-      <nav class="navbar" data-navbar>
-
-        <div class="navbar-top">
-
-          <a href="/" class="logo">
-            <img src="./assets/images/logoRSUD.png" width="140" height="50" alt="RSUD Sukajadi">
-          </a>
-
-          <button class="nav-close-btn" aria-label="clsoe menu" data-nav-toggler>
-            <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
-          </button>
-
+<body>
+    <!-- ***** Preloader Start ***** -->
+    <div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
         </div>
-
-        <ul class="navbar-list">
-
-          <li class="navbar-item">
-            <a href="/" class="navbar-link title-md">Home</a>
-          </li>
-
-          <li class="navbar-item">
-            <a href="" class="navbar-link title-md active">Dokter</a>
-          </li>
-
-          <li class="navbar-item">
-            <a href="layanan" class="navbar-link title-md">Layanan</a>
-          </li>
-
-          <li class="navbar-item">
-            <a href="berita" class="navbar-link title-md">Berita</a>
-          </li>
-
-          <li class="navbar-item">
-            <a href="kontak" class="navbar-link title-md">Kontak</a>
-          </li>
-          <li class="navbar-item">
-            <a href="https://rsudsukajadi.web.id/pendaftaran" class="navbar-link title-md">Pendaftaran</a>
-          </li>
-        </ul>
-      </nav>
-          <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
-             <ion-icon name="menu-outline"></ion-icon>
-          </button>
     </div>
-  </header>
+    <!-- ***** Preloader End ***** -->
 
+    <!-- Header -->
+    <header class="">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="/">
+                    <h2>RSUD<em>Sukajadi</em></h2>
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                    aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">Home</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="">Dokter
+                                <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="layanan">Layanan</a></li>
+                        <li class="nav-item"><a class="nav-link" href="berita">Berita</a></li>
+                        <li class="nav-item"><a class="nav-link" href="kontak">Kontak</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://rsudsukajadi.web.id/pendaftaran">Pendaftaran</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
 
-
-
-
-  <main>
-    <article>
-
-      <!-- 
-        - #HERO
-      -->
-
-      <section class="section hero" style="background-image: url('./assets/images/hero-bg.png')" aria-label="home">
-        <div class="container">
-
-          <div class="hero-content">
-
-            <p class="hero-subtitle has-before" data-reveal="left">Rumah Sakit Umum Daerah Banyuasin</p>
-
-            <h1 class="headline-lg hero-title" data-reveal="left">
-              List Dokter
-            </h1>
-
-          </div>
-
-          <figure class="hero-banner" data-reveal="right">
-            <img src="./assets/images/hero-banner.png" width="590" height="517" loading="eager" alt="hero banner"
-              class="w-100">
-          </figure>
-
+    <!-- Page Content -->
+    <!-- Banner Starts Here -->
+    <div class="banner header-text">
+        <div class="owl-banner owl-carousel">
         </div>
-      </section>
+    </div>
+    <!-- Banner Ends Here -->
 
-      <!-- 
-        - #LISTING
-      -->
-
-      <section class="section listing" aria-labelledby="listing-label">
+    <!-- List Dokter Section -->
+    <div class="latest-products">
         <div class="container">
-
-          <ul class="grid-list">
-
-            <li>
-              <p class="section-subtitle title-lg" id="listing-label" data-reveal="left">List Dokter</p>
-
-              <h2 class="headline-md" data-reveal="left">Cari Dokter Spesialis Anda</h2>
-            </li>
-
-            @foreach($dokters as $dokter)
-            <li>
-              <div class="listing-card" data-reveal="bottom">
-                <div class="card-icon">
-                    @switch($dokter->logo)
-                        @case('kandungan')
-                            <img src="./assets/images/kandungan.png" width="71" height="71" loading="lazy" alt="Dokter Spesialis Kebidanan dan Kandungan">
-                            @break
-                        @case('penyakit_dalam')
-                            <img src="./assets/images/penyakit_dalam.png" width="71" height="71" loading="lazy" alt="Dokter Gigi">
-                            @break
-                        @case('bedah')
-                            <img src="./assets/images/bedah.png" width="71" height="71" loading="lazy" alt="Dokter Spesialis Bedah">
-                            @break
-                        @case('anak')
-                            <img src="./assets/images/anak.png" width="71" height="71" loading="lazy" alt="Dokter Spesialis Anak">
-                            @break
-                        @case('mata')
-                            <img src="./assets/images/mata.png" width="71" height="71" loading="lazy" alt="Dokter Spesialis Mata">
-                            @break
-                        @case('gigi')
-                            <img src="./assets/images/gigi.png" width="71" height="71" loading="lazy" alt="Dokter Spesialis Gigi">
-                            @break
-                        @default
-                            <img src="./assets/images/stetoskop.png" width="71" height="71" loading="lazy" alt="Dokter">
-                    @endswitch
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-heading">
+                        <h2>Daftar Dokter Spesialis</h2>
+                        <a href="">Lihat Semua <i class="fa fa-angle-right"></i></a>
+                    </div>
                 </div>
 
-                <div>
-                  <h3 class="headline-sm card-title">{{ $dokter->spesialisasi }}</h3>
-                  <p class="card-text">{{ $dokter->nama }}</p>
-                  <p class="card-text">{{ $dokter->hari }}</p>
-                  <p class="card-text">{{ $dokter->jam }}</p>
+                <!-- Dynamic Doctor Cards dari sistem -->
+                @foreach($dokters as $dokter)
+                <div class="col-lg-4 col-md-6">
+                    <div class="product-item">
+                        <a href="#">
+                            @if($dokter->foto)
+                                <img src="{{ Storage::url($dokter->foto) }}" alt="{{ $dokter->nama }}" class="doctor-photo">
+                            @else
+                                @switch($dokter->logo)
+                                    @case('kandungan')
+                                        <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1191&q=80" alt="Dokter Spesialis Kebidanan dan Kandungan">
+                                        @break
+                                    @case('penyakit_dalam')
+                                        <img src="https://images.unsplash.com/photo-1582560469781-1d8c94d2b9c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Dokter Spesialis Penyakit Dalam">
+                                        @break
+                                    @case('bedah')
+                                        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Dokter Spesialis Bedah">
+                                        @break
+                                    @case('anak')
+                                        <img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80" alt="Dokter Spesialis Anak">
+                                        @break
+                                    @case('mata')
+                                        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Dokter Spesialis Mata">
+                                        @break
+                                    @case('gigi')
+                                        <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="Dokter Spesialis Gigi">
+                                        @break
+                                    @default
+                                        <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1191&q=80" alt="Dokter">
+                                @endswitch
+                            @endif
+                        </a>
+                        <div class="down-content">
+                            <a href="#">
+                                <h4>{{ $dokter->spesialisasi }}</h4>
+                            </a>
+                            <h6>{{ $dokter->nama }}</h6>
+                            <p><strong>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar" viewBox="0 0 16 16">
+                                    <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z"/>
+                                </svg>
+                            Hari Praktik:</strong> {{ $dokter->hari }}</p>
+                            <p><strong><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
+                                <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"/>
+                                <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0"/>
+                            </svg>
+                             Jam Praktik:</strong> {{ $dokter->jam }}</p>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </li>
-            @endforeach
+                @endforeach
 
-          </ul>
+            </div>
         </div>
-      </section>
-    </article>
-  </main>
-
-
-
-
-
- <!-- 
-    - #FOOTER
-  -->
-
-  <footer class="footer" style="background-image: url('./assets/images/footer-bg.png')">
-    <div class="container">
-
-      <div class="section footer-top">
-
-        <div class="footer-brand" data-reveal="bottom">
-
-        <a href="#" class="logo">
-            <img src="./assets/images/logoRSUD.png" width="150" height="46" loading="lazy" alt="">
-          </a>
-
-          <ul class="contact-list has-after">
-
-            <li class="contact-item">
-
-              <div class="item-icon">
-                <ion-icon name="mail-open-outline"></ion-icon>
-              </div>
-
-              <div>
-                <p>
-                Main Email : <a href="mailto:rs.sukajadi@gmail.com" class="contact-link">rs.sukajadi@gmail.com</a>
-                </p>
-                <p>
-                  Instagram : @rsud_sukajadi
-                </p>
-              </div>
-
-            </li>
-
-            <li class="contact-item">
-
-              <div class="item-icon">
-                <ion-icon name="call-outline"></ion-icon>
-              </div>
-
-              <div>
-                <p>
-                  Mobile : <a href="tel:000232439493" class="contact-link">0822 7988 7861</a>
-                </p>
-              </div>
-
-            </li>
-
-          </ul>
-
-        </div>
-
-        <ul class="footer-list" data-reveal="bottom">
-
-          <li>
-            <p class="headline-sm footer-list-title">Layanan</p>
-          </li>
-
-          <li>
-            <a href="dokter" class="text footer-link">Dokter</a>
-          </li>
-
-          <li>
-            <a href="berita" class="text footer-link">Berita</a>
-          </li>
-
-          <li>
-            <a href="kontak" class="text footer-link">Kontak Kami</a>
-          </li>
-
-        </ul>
-
-        <ul class="footer-list" data-reveal="bottom">
-
-          <li>
-            <p class="headline-sm footer-list-title">Selengkapnya</p>
-          </li>
-
-          <li>
-            <a href="{{ url('kritiksaran') }}" class="text footer-link">Kritik dan Saran</a>
-          </li>
-
-          <li>
-            <a href="{{ route('pengaduan') }}" class="text footer-link">Pengaduan</a>
-          </li>
-
-          <li>
-            <a href="{{ route('admin.login') }}" class="text footer-link">Kamu Admin ? Login disini</a>
-          </li>
-
-        </ul>
-
-      </div>
-
-      <div class="footer-bottom">
-
-        <p class="text copyright">
-          &copy; Rumah Sakit Umum Daerah Banyuasin 
-        </p>
-
-      </div>
-
     </div>
-  </footer>
 
+    <!-- Footer -->
+    <footer style="background-color: #5a6c7d; color: white; padding: 40px 0 20px 0;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h5 style="color: white; font-weight: 600; margin-bottom: 20px;">RSUD SUKAJADI</h5>
+                    <p style="color: #d1d9e0; font-size: 14px; line-height: 1.6;">
+                        Rumah Sakit Umum Daerah Sukajadi adalah pusat layanan kesehatan publik yang berdedikasi memberikan pelayanan medis terbaik bagi masyarakat Banyuasin dan sekitarnya.
+                    </p>
+                </div>
+                <div class="col-md-3">
+                    <h5 style="color: white; font-weight: 600; margin-bottom: 20px;">LAYANAN</h5>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="margin-bottom: 8px;"><a href="dokter" style="color: #d1d9e0; text-decoration: none; font-size: 14px;">Dokter</a></li>
+                        <li style="margin-bottom: 8px;"><a href="berita" style="color: #d1d9e0; text-decoration: none; font-size: 14px;">Berita</a></li>
+                        <li style="margin-bottom: 8px;"><a href="kontak" style="color: #d1d9e0; text-decoration: none; font-size: 14px;">Kontak Kami</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5 style="color: white; font-weight: 600; margin-bottom: 20px;">SELENGKAPNYA</h5>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="margin-bottom: 8px;"><a href="#" style="color: #d1d9e0; text-decoration: none; font-size: 14px;">Kritik dan Saran</a></li>
+                        <li style="margin-bottom: 8px;"><a href="#" style="color: #d1d9e0; text-decoration: none; font-size: 14px;">Pengaduan</a></li>
+                        <li style="margin-bottom: 8px;"><a href="/admin/login" style="color: #ffc107; text-decoration: none; font-size: 14px; font-weight: 500;">Kamu Admin ? Login disini</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5 style="color: white; font-weight: 600; margin-bottom: 20px;">KONTAK</h5>
+                    <div style="margin-bottom: 12px;">
+                        <i class="fa fa-map-marker" style="color: #ffc107; margin-right: 10px;"></i>
+                        <span style="color: #d1d9e0; font-size: 14px;">Jl.Palembang - Betung KM 14</span>
+                    </div>
+                    <div style="margin-bottom: 12px;">
+                        <i class="fa fa-envelope" style="color: #ffc107; margin-right: 10px;"></i>
+                        <span style="color: #d1d9e0; font-size: 14px;">rs.sukajadi@gmail.com</span>
+                    </div>
+                    <div style="margin-bottom: 12px;">
+                        <i class="fa fa-phone" style="color: #ffc107; margin-right: 10px;"></i>
+                        <span style="color: #d1d9e0; font-size: 14px;">0822 7988 7861</span>
+                    </div>
+                    <div style="margin-bottom: 12px;">
+                        <i class="fa fa-instagram" style="color: #ffc107; margin-right: 10px;"></i>
+                        <span style="color: #d1d9e0; font-size: 14px;">@rsud_sukajadi</span>
+                    </div>
+                </div>
+            </div>
+            <hr style="border-color: #6c7b8a; margin: 30px 0 20px 0;">
+            <div class="row">
+                <div class="col-md-6">
+                    <p style="color: #d1d9e0; margin: 0; font-size: 14px;">© Rumah Sakit Umum Daerah Banyuasin</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
+    <!-- Additional Scripts -->
+    <script src="assets/js/custom.js"></script>
+    <script src="assets/js/owl.js"></script>
 
-
-
-  <!-- 
-    - #BACK TO TOP
-  -->
-
-  <a href="#top" class="back-top-btn" aria-label="back to top" data-back-top-btn>
-    <ion-icon name="chevron-up"></ion-icon>
-  </a>
-
-
-
-
-
-  <!-- 
-    - custom js link
-  -->
-  <script src="./assets/js/script.js"></script>
-
-  <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const tabBtns = document.querySelectorAll('.tab-btn');
-        const tabPanes = document.querySelectorAll('.tab-pane');
-  
-        tabBtns.forEach(btn => {
-          btn.addEventListener('click', function() {
-            // Remove active class from all buttons and panes
-            tabBtns.forEach(b => b.classList.remove('active'));
-            tabPanes.forEach(p => p.classList.remove('active'));
-  
-            // Add active class to clicked button and corresponding pane
-            this.classList.add('active');
-            document.getElementById(this.dataset.tab).classList.add('active');
-          });
-        });
-      });
+    <!-- Custom JavaScript untuk halaman dokter -->
+    <script>
+        // Fallback untuk preloader jika custom.js tidak load
+        setTimeout(function() {
+            $('#preloader').fadeOut('slow', function() {
+                $(this).remove();
+            });
+        }, 3000);
     </script>
-
-  <!-- 
-    - ionicon link
-  -->
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
 </body>
 
 </html>

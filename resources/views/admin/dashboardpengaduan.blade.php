@@ -22,7 +22,8 @@
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Lokasi</th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Tanggal</th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Pesan</th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2"></th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Status</th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -32,7 +33,7 @@
                                         <p class="text-xs font-weight-bold mb-0">{{ $loop->iteration }}</p>
                                     </td>
                                     <td class="ps-4">
-                                        <p class="text-xs font-weight-bold mb-0">{{ substr($p->nama, 0, 2) . str_repeat('*', strlen($p->nama) - 2) }}</p>
+                                        <p class="text-xs font-weight-bold mb-0">{{ $p->nama }}</p>
                                         <p class="text-xs text-secondary mb-0">RM: {{ $p->no_rm ?: '-' }}</p>
                                     </td>
                                     <td>
@@ -49,14 +50,26 @@
                                         <p class="text-xs font-weight-bold mb-0">{{ $p->tanggal_kejadian }}</p>
                                     </td>
                                     <td>
-                                        <p class="text-xs font-weight-bold mb-0">{{ Str::limit($p->message, 10) }}</p>
+                                        <p class="text-xs font-weight-bold mb-0">{{ Str::limit($p->message, 50) }}</p>
                                     </td>
-                                    <td class="align-middle text-center">
-                                    <a href="{{ route('admin.pengaduan.show', $p->id) }}" class="btn btn-info btn-sm px-3 py-1 me-1">View</a>
+                                    <td>
+                                        <form action="{{ route('admin.pengaduan.updateStatus', $p->id) }}" method="POST">
+                                            @csrf
+                                            @method('PUT')
+                                            <select name="status" class="form-select form-select-sm" onchange="this.form.submit()">
+                                                <option value="Belum Diproses" {{ $p->status == 'Belum Diproses' ? 'selected' : '' }}>Belum Diproses</option>
+                                                <option value="Sedang Diproses" {{ $p->status == 'Sedang Diproses' ? 'selected' : '' }}>Sedang Diproses</option>
+                                                <option value="Selesai" {{ $p->status == 'Selesai' ? 'selected' : '' }}>Selesai</option>
+                                            </select>
+                                        </form>
+                                    </td>
+                                    <td>
                                         <form action="{{ route('admin.pengaduan.destroy', $p->id) }}" method="POST" class="d-inline">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="btn btn-danger btn-sm px-3 py-1" onclick="return confirm('Hapus Pengaduan ini ? ')">Delete</button>
+                                            <button type="submit" class="btn btn-link text-danger text-gradient px-3 mb-0" onclick="return confirm('Apakah Anda yakin ingin menghapus pengaduan ini?')">
+                                                <i class="material-icons text-sm me-2">delete</i>
+                                            </button>
                                         </form>
                                     </td>
                                 </tr>

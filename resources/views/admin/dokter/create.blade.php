@@ -120,6 +120,33 @@
                       </div>
                     </div>
 
+                    <!-- Tambahkan fitur upload dan crop foto -->
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="form-group mb-3">
+                          <label for="foto" class="form-label">Foto Dokter (Akan ditampilkan dalam bentuk lingkaran)</label>
+                          <input type="file" name="foto" id="foto" class="form-control" accept="image/*">
+                          <input type="hidden" name="cropped_foto" id="cropped_foto">
+                        </div>
+                        <div class="mt-3">
+                          <div id="image-preview" style="display: none; max-width: 300px; margin-bottom: 15px;">
+                            <img id="preview" src="" style="max-width: 100%;">
+                          </div>
+                          <div id="image-cropper" style="display: none; max-width: 500px;">
+                            <div class="mb-2">Crop Foto (1:1)</div>
+                            <div id="cropper-container" style="max-height: 400px;"></div>
+                            <button type="button" id="crop-button" class="btn btn-info mt-3">Crop Foto</button>
+                          </div>
+                          <div id="cropped-image-container" style="display: none; margin-top: 15px;">
+                            <div class="mb-2">Hasil Crop:</div>
+                            <div style="width: 150px; height: 150px; border-radius: 8px; overflow: hidden; border: 4px solid white; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+                              <img id="cropped-image" src="" style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
                     <div class="row">
                       <div class="col-md-12">
                         <div class="input-group input-group-outline my-3">
@@ -166,5 +193,89 @@
   <script src="{{ asset('assets/js/plugins/perfect-scrollbar.min.js') }}"></script>
   <script src="{{ asset('assets/js/plugins/smooth-scrollbar.min.js') }}"></script>
   <script src="{{ asset('assets/js/material-dashboard.min.js?v=3.2.0') }}"></script>
+  
+  <!-- Tambahkan CSS dan JS untuk Cropper.js -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const fileInput = document.getElementById('foto');
+      const imagePreview = document.getElementById('image-preview');
+      const preview = document.getElementById('preview');
+      const imageCropper = document.getElementById('image-cropper');
+      const cropperContainer = document.getElementById('cropper-container');
+      const cropButton = document.getElementById('crop-button');
+      const croppedImageContainer = document.getElementById('cropped-image-container');
+      const croppedImage = document.getElementById('cropped-image');
+      const croppedFotoInput = document.getElementById('cropped_foto');
+      
+      let cropper;
+      
+      fileInput.addEventListener('change', function(e) {
+        const file = e.target.files[0];
+        if (!file) return;
+        
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          // Tampilkan preview
+          preview.src = e.target.result;
+          imagePreview.style.display = 'block';
+          
+          // Reset cropper jika sudah ada
+          if (cropper) {
+            cropper.destroy();
+            cropper = null;
+          }
+          
+          // Siapkan cropper
+          const image = document.createElement('img');
+          image.src = e.target.result;
+          image.style.maxWidth = '100%';
+          cropperContainer.innerHTML = '';
+          cropperContainer.appendChild(image);
+          
+          // Inisialisasi cropper
+          cropper = new Cropper(image, {
+            aspectRatio: 1, // Tetap menggunakan rasio 1:1 untuk bentuk kotak
+            viewMode: 1,
+            dragMode: 'move',
+            autoCropArea: 0.8,
+            restore: false,
+            guides: true,
+            center: true,
+            highlight: false,
+            cropBoxMovable: true,
+            cropBoxResizable: true,
+            toggleDragModeOnDblclick: false
+          });
+          
+          imageCropper.style.display = 'block';
+          croppedImageContainer.style.display = 'none';
+        };
+        
+        reader.readAsDataURL(file);
+      });
+      
+      cropButton.addEventListener('click', function() {
+        if (!cropper) return;
+        
+        // Dapatkan hasil crop dalam format base64
+        const canvas = cropper.getCroppedCanvas({
+          width: 300,
+          height: 300,
+          fillColor: '#fff',
+          imageSmoothingEnabled: true,
+          imageSmoothingQuality: 'high'
+        });
+        
+        const croppedDataUrl = canvas.toDataURL('image/jpeg', 0.9);
+        croppedImage.src = croppedDataUrl;
+        croppedFotoInput.value = croppedDataUrl;
+        
+        croppedImageContainer.style.display = 'block';
+      });
+    });
+  </script>
 </body>
 </html>

@@ -26,11 +26,26 @@ class DokterController extends Controller
             'spesialisasi' => 'required',
             'hari' => 'required',
             'jam' =>'required',
-            'foto' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
             'deskripsi' => 'nullable'
         ]);
 
-        if ($request->hasFile('foto')) {
+        // Proses foto yang sudah di-crop
+        if ($request->has('cropped_foto') && !empty($request->cropped_foto)) {
+            // Decode base64 image
+            $image_parts = explode(";", $request->cropped_foto);
+            $image_type_aux = explode("image/", $image_parts[0]);
+            $image_type = $image_type_aux[1];
+            $image_base64 = base64_decode(explode(",", $request->cropped_foto)[1]);
+            
+            // Generate unique filename
+            $filename = 'dokter_' . time() . '.' . $image_type;
+            $filepath = 'dokter-photos/' . $filename;
+            
+            // Save image to storage
+            Storage::disk('public')->put($filepath, $image_base64);
+            $validated['foto'] = $filepath;
+        } elseif ($request->hasFile('foto')) {
+            // Fallback to original file upload if cropped image is not available
             $fotoPath = $request->file('foto')->store('dokter-photos', 'public');
             $validated['foto'] = $fotoPath;
         }
@@ -57,11 +72,31 @@ class DokterController extends Controller
             'spesialisasi' => 'required',
             'hari' => 'required',
             'jam' =>'required',
-            'foto' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
             'deskripsi' => 'nullable'
         ]);
 
-        if ($request->hasFile('foto')) {
+        // Proses foto yang sudah di-crop
+        if ($request->has('cropped_foto') && !empty($request->cropped_foto)) {
+            // Hapus foto lama jika ada
+            if ($dokter->foto) {
+                Storage::disk('public')->delete($dokter->foto);
+            }
+            
+            // Decode base64 image
+            $image_parts = explode(";", $request->cropped_foto);
+            $image_type_aux = explode("image/", $image_parts[0]);
+            $image_type = $image_type_aux[1];
+            $image_base64 = base64_decode(explode(",", $request->cropped_foto)[1]);
+            
+            // Generate unique filename
+            $filename = 'dokter_' . time() . '.' . $image_type;
+            $filepath = 'dokter-photos/' . $filename;
+            
+            // Save image to storage
+            Storage::disk('public')->put($filepath, $image_base64);
+            $validated['foto'] = $filepath;
+        } elseif ($request->hasFile('foto')) {
+            // Fallback to original file upload if cropped image is not available
             if ($dokter->foto) {
                 Storage::disk('public')->delete($dokter->foto);
             }
